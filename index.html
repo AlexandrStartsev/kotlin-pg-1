@@ -3,15 +3,18 @@
 <head>
     <meta charset='utf-8'>
     <title>Test page</title>
-    <script type="text/javascript" src="target/classes/kotlin.js"></script>
-    <script type="text/javascript" src="target/classes/kotlin-pg-1.js"></script>
+    <script type="text/javascript" src="target/js/lib/kotlin.js"></script>
+    <script type="text/javascript" src="target/js/kotlin-pg-1.js"></script>
 </head>
 
 <body>
 <script>
     var kotlinLibrary = window["kotlin-pg-1"];
-    var obj = new kotlinLibrary.edu.alex.subfolder.SomeKotlinClass("javascript");
-    alert(obj.sum());
+    var obj = new kotlinLibrary.edu.alex.subfolder.SomeKotlinClass({
+        foo: () => "javascript",
+        foo2: (name) => name + " + javascript"
+    });
+    alert(obj.report2());
 </script>
 </body>
 
